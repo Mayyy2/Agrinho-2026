@@ -1,234 +1,37 @@
-/* ==========================================
-   CONFIGURAÇÕES GERAIS (IGUAL AO CANVA)
-   ========================================== */
+/* Remove margens padrão do navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
     background-color: #ffffff;
-    color: #444444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Estrutura das páginas: uma embaixo da outra */
-.pagina-canvas {
+/* Alinha o container do site */
+.site-container {
     width: 100%;
-    min-height: 100vh;
+    max-width: 1920px; /* Evita que o site estique demais em telas gigantes */
     display: flex;
-    position: relative;
-    overflow: hidden;
+    flex-direction: column;
+}
+
+/* Configuração de cada página (uma embaixo da outra) */
+.pagina-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #ffffff;
 }
 
-/* ==========================================
-   PÁGINA 1: SEMEANDO UM FUTURO MELHOR
-   ========================================== */
-.secao-um {
-    align-items: center;
-    justify-content: space-between;
-    padding: 120px 8% 60px 8%;
-}
-
-/* Faixa/Menu superior verde */
-.header-menu {
-    position: absolute;
-    top: 40px;
-    left: 8%;
-    right: 8%;
-    height: 60px;
-    background-color: #7A9A3A; /* Verde oliva do Canva */
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 35px;
-    color: #ffffff;
-}
-
-.header-menu .logo {
-    font-size: 18px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.header-menu .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.header-menu .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-/* Lado Esquerdo: Grafismo e Círculo da Imagem */
-.lado-esquerdo-canvas {
-    position: relative;
-    width: 45%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Forma verde escura abstrata que fica atrás/ao lado */
-.decoracao-fundo-verde {
-    position: absolute;
-    bottom: -160px;
-    left: -120px;
-    width: 400px;
-    height: 350px;
-    background-color: #2D3E1A; /* Verde escuro do fundo */
-    border-radius: 150px 150px 0 150px;
-    z-index: 1;
-}
-
-/* Moldura redonda para a foto do trator */
-.moldura-foto-trator {
-    width: 460px;
-    height: 460px;
-    border-radius: 50%;
-    background-image: url('fazenda.jpg'); /* Adicione sua foto com este nome */
-    background-size: cover;
-    background-position: center;
-    z-index: 2;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-/* Lado Direito: Textos */
-.lado-direito-canvas {
-    width: 48%;
-    padding-left: 20px;
-}
-
-.lado-direito-canvas h1 {
-    color: #7A9A3A;
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 30px;
-}
-
-.lado-direito-canvas p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333333;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-/* ==========================================
-   PÁGINA 2: ROTAÇÃO E GOTEJAMENTO
-   ========================================== */
-.secao-dois {
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 15%;
-    gap: 60px;
-}
-
-/* Bloco de conteúdo (Número + Texto) */
-.card-conteudo {
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
+/* Faz a imagem do Canva se ajustar perfeitamente à tela do usuário */
+.imagem-canvas {
     width: 100%;
-}
-
-/* Círculo do número (01 e 02) */
-.badge-numero {
-    width: 42px;
-    height: 42px;
-    background-color: #7A9A3A;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 5px;
-}
-
-.conteudo-texto-bloco {
-    width: 100%;
-}
-
-/* Títulos das soluções */
-.conteudo-texto-bloco h2 {
-    color: #7A9A3A;
-    font-size: 36px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.conteudo-texto-bloco p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333333;
-    margin-bottom: 15px;
-}
-
-/* Lista interna do gotejamento */
-.lista-marcadores {
-    list-style: none;
-    padding-left: 5px;
-}
-
-.lista-marcadores li {
-    font-size: 16px;
-    line-height: 1.6;
-    position: relative;
-    padding-left: 20px;
-}
-
-/* Simula a bolinha da lista do Canva */
-.lista-marcadores li::before {
-    content: "•";
-    color: #333333;
-    font-weight: bold;
-    font-size: 20px;
-    position: absolute;
-    left: 0;
-    top: -2px;
-}
-
-/* ==========================================
-   RESPONSIVIDADE (PARA CELULAR)
-   ========================================== */
-@media (max-width: 1024px) {
-    .secao-um {
-        flex-direction: column-reverse;
-        padding-top: 160px;
-        gap: 40px;
-    }
-    .lado-esquerdo-canvas, .lado-direito-canvas {
-        width: 100%;
-    }
-    .moldura-foto-trator {
-        width: 320px;
-        height: 320px;
-    }
-    .decoracao-fundo-verde {
-        width: 260px;
-        height: 220px;
-        bottom: -60px;
-    }
-    .secao-dois {
-        padding: 60px 5%;
-    }
-    .lado-direito-canvas h1 {
-        font-size: 38px;
-    }
+    height: auto;
+    display: block; /* Remove espaços fantasmas abaixo da imagem */
 }
