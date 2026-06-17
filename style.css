@@ -1,206 +1,234 @@
-/* Configurações Gerais do Site */
+/* ==========================================
+   CONFIGURAÇÕES GERAIS (IGUAL AO CANVA)
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
     background-color: #ffffff;
-    color: #333333;
-    overflow-x: hidden;
+    color: #444444;
 }
 
-/* Estrutura das Seções (uma embaixo da outra como as páginas do Canva) */
-section {
+/* Estrutura das páginas: uma embaixo da outra */
+.pagina-canvas {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 10%;
     position: relative;
-}
-
-/* --- PRIMEIRA SEÇÃO (Slide 1) --- */
-.secao-um {
+    overflow: hidden;
     background-color: #ffffff;
-    flex-direction: column;
 }
 
-/* Menu Superior Verde */
-.navbar {
-    width: 80%;
-    background-color: #7A9A3A; /* Tom de verde do seu design original */
-    padding: 15px 30px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-between;
+/* ==========================================
+   PÁGINA 1: SEMEANDO UM FUTURO MELHOR
+   ========================================== */
+.secao-um {
     align-items: center;
-    color: white;
+    justify-content: space-between;
+    padding: 120px 8% 60px 8%;
+}
+
+/* Faixa/Menu superior verde */
+.header-menu {
     position: absolute;
     top: 40px;
-    z-index: 10;
-}
-
-.navbar .logo {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.navbar .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-.navbar .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: opacity 0.2s;
-}
-
-.navbar .nav-links li a:hover {
-    opacity: 0.8;
-}
-
-/* Conteúdo Principal da Seção 1 */
-.conteudo-um {
+    left: 8%;
+    right: 8%;
+    height: 60px;
+    background-color: #7A9A3A; /* Verde oliva do Canva */
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 100px;
-    gap: 50px;
+    padding: 0 35px;
+    color: #ffffff;
 }
 
-/* Círculo com a imagem de fundo */
-.imagem-circulo {
-    width: 450px;
-    height: 450px;
+.header-menu .logo {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-menu .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.header-menu .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Lado Esquerdo: Grafismo e Círculo da Imagem */
+.lado-esquerdo-canvas {
+    position: relative;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Forma verde escura abstrata que fica atrás/ao lado */
+.decoracao-fundo-verde {
+    position: absolute;
+    bottom: -160px;
+    left: -120px;
+    width: 400px;
+    height: 350px;
+    background-color: #2D3E1A; /* Verde escuro do fundo */
+    border-radius: 150px 150px 0 150px;
+    z-index: 1;
+}
+
+/* Moldura redonda para a foto do trator */
+.moldura-foto-trator {
+    width: 460px;
+    height: 460px;
     border-radius: 50%;
-    background-image: url('fazenda.jpg'); /* Nome da foto do trator baixada do Canva */
+    background-image: url('fazenda.jpg'); /* Adicione sua foto com este nome */
     background-size: cover;
     background-position: center;
-    position: relative;
-    flex-shrink: 0;
+    z-index: 2;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Detalhe geométrico verde escuro atrás do círculo */
-.imagem-circulo::before {
-    content: '';
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background-color: #3B4E1F;
-    border-radius: 50%;
-    bottom: -20px;
-    left: -20px;
-    z-index: -1;
+/* Lado Direito: Textos */
+.lado-direito-canvas {
+    width: 48%;
+    padding-left: 20px;
 }
 
-.texto-um {
-    max-width: 50%;
-}
-
-.texto-um h1 {
+.lado-direito-canvas h1 {
     color: #7A9A3A;
-    font-size: 48px;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 30px;
 }
 
-.texto-um p {
+.lado-direito-canvas p {
     font-size: 16px;
     line-height: 1.6;
-    color: #444;
-    margin-bottom: 15px;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
-/* --- SEGUNDA SEÇÃO (Slide 2) --- */
+/* ==========================================
+   PÁGINA 2: ROTAÇÃO E GOTEJAMENTO
+   ========================================== */
 .secao-dois {
-    background-color: #ffffff;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    gap: 50px;
-    border-top: 2px solid #f0f0f0; /* Linha divisória sutil entre os blocos */
+    padding: 80px 15%;
+    gap: 60px;
 }
 
-.bloco-conteudo {
+/* Bloco de conteúdo (Número + Texto) */
+.card-conteudo {
     display: flex;
     align-items: flex-start;
-    gap: 30px;
-    max-width: 850px;
-    margin-left: 50px;
+    gap: 25px;
+    width: 100%;
 }
 
-.numero-circulo {
+/* Círculo do número (01 e 02) */
+.badge-numero {
+    width: 42px;
+    height: 42px;
     background-color: #7A9A3A;
-    color: white;
-    width: 45px;
-    height: 45px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
     flex-shrink: 0;
+    margin-top: 5px;
 }
 
-.texto-dois h2 {
+.conteudo-texto-bloco {
+    width: 100%;
+}
+
+/* Títulos das soluções */
+.conteudo-texto-bloco h2 {
     color: #7A9A3A;
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.conteudo-texto-bloco p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
     margin-bottom: 15px;
 }
 
-.texto-dois p {
+/* Lista interna do gotejamento */
+.lista-marcadores {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.lista-marcadores li {
     font-size: 16px;
     line-height: 1.6;
-    color: #444;
+    position: relative;
+    padding-left: 20px;
 }
 
-.texto-dois .espacamento {
-    margin-top: 15px;
+/* Simula a bolinha da lista do Canva */
+.lista-marcadores li::before {
+    content: "•";
+    color: #333333;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
 }
 
-.texto-dois .lista-beneficios {
-    margin-top: 15px;
-    margin-left: 20px;
-}
-
-.texto-dois .lista-beneficios li {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #444;
-}
-
-/* Ajustes automáticos para que o site fique bonito no Celular (Responsividade) */
-@media (max-width: 968px) {
-    .conteudo-um {
+/* ==========================================
+   RESPONSIVIDADE (PARA CELULAR)
+   ========================================== */
+@media (max-width: 1024px) {
+    .secao-um {
         flex-direction: column-reverse;
-        text-align: center;
-        margin-top: 140px;
+        padding-top: 160px;
+        gap: 40px;
     }
-    .texto-um {
-        max-width: 100%;
+    .lado-esquerdo-canvas, .lado-direito-canvas {
+        width: 100%;
     }
-    .imagem-circulo {
-        width: 300px;
-        height: 300px;
+    .moldura-foto-trator {
+        width: 320px;
+        height: 320px;
     }
-    .navbar {
-        width: 95%;
+    .decoracao-fundo-verde {
+        width: 260px;
+        height: 220px;
+        bottom: -60px;
     }
-    .bloco-conteudo {
-        margin-left: 0;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .secao-dois {
+        padding: 60px 5%;
+    }
+    .lado-direito-canvas h1 {
+        font-size: 38px;
     }
 }
