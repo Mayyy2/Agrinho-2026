@@ -1,93 +1,206 @@
-/* Reset básico para limpar margens padrões */
+/* Configurações Gerais do Site */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f4f4f7; /* Cor de fundo suave para destacar o slide */
-    font-family: 'Lora', serif; /* Fonte serifada elegante para o texto principal */
-    color: #1a1a1a;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-/* Container que imita a folha/slide do Canva */
-.slide-container {
     background-color: #ffffff;
-    max-width: 900px;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* Estrutura das Seções (uma embaixo da outra como as páginas do Canva) */
+section {
     width: 100%;
-    padding: 60px 50px;
-    border: 2px solid #b3a2d6; /* Borda roxa sutil inspirada na seleção do Canva */
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-/* Cabeçalho */
-.slide-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.slide-header h1 {
-    font-family: 'Courier Prime', monospace; /* Fonte estilo máquina de escrever do título */
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-}
-
-.slide-header h2 {
-    font-family: 'Courier Prime', monospace;
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.slide-header h3 {
-    font-family: 'Courier Prime', monospace;
-    font-size: 1.1rem;
-    font-weight: 400;
-}
-
-/* Conteúdo e Texto */
-.slide-content p {
-    font-size: 1.15rem;
-    text-align: justify;
-    margin-bottom: 25px;
-    text-indent: 0px; /* Alinhado à esquerda como na imagem */
-}
-
-/* Estilização da Imagem */
-.image-wrapper {
+    min-height: 100vh;
     display: flex;
-    justify-content: flex-start; /* Alinhado à esquerda */
-    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 10%;
+    position: relative;
 }
 
-.image-wrapper img {
-    max-width: 60%; /* Ajuste a largura para combinar com o layout */
-    height: auto;
-    display: block;
-    object-fit: cover;
+/* --- PRIMEIRA SEÇÃO (Slide 1) --- */
+.secao-um {
+    background-color: #ffffff;
+    flex-direction: column;
 }
 
-/* Responsividade para telas menores (celulares) */
-@media (max-width: 768px) {
-    .slide-container {
-        padding: 30px 20px;
+/* Menu Superior Verde */
+.navbar {
+    width: 80%;
+    background-color: #7A9A3A; /* Tom de verde do seu design original */
+    padding: 15px 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 40px;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+
+.navbar .nav-links li a:hover {
+    opacity: 0.8;
+}
+
+/* Conteúdo Principal da Seção 1 */
+.conteudo-um {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;
+    gap: 50px;
+}
+
+/* Círculo com a imagem de fundo */
+.imagem-circulo {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-image: url('fazenda.jpg'); /* Nome da foto do trator baixada do Canva */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Detalhe geométrico verde escuro atrás do círculo */
+.imagem-circulo::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #3B4E1F;
+    border-radius: 50%;
+    bottom: -20px;
+    left: -20px;
+    z-index: -1;
+}
+
+.texto-um {
+    max-width: 50%;
+}
+
+.texto-um h1 {
+    color: #7A9A3A;
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.texto-um p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* --- SEGUNDA SEÇÃO (Slide 2) --- */
+.secao-dois {
+    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    border-top: 2px solid #f0f0f0; /* Linha divisória sutil entre os blocos */
+}
+
+.bloco-conteudo {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 850px;
+    margin-left: 50px;
+}
+
+.numero-circulo {
+    background-color: #7A9A3A;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.texto-dois h2 {
+    color: #7A9A3A;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.texto-dois p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.texto-dois .espacamento {
+    margin-top: 15px;
+}
+
+.texto-dois .lista-beneficios {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.texto-dois .lista-beneficios li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Ajustes automáticos para que o site fique bonito no Celular (Responsividade) */
+@media (max-width: 968px) {
+    .conteudo-um {
+        flex-direction: column-reverse;
+        text-align: center;
+        margin-top: 140px;
     }
-    
-    .slide-header h1 {
-        font-size: 1.8rem;
+    .texto-um {
+        max-width: 100%;
     }
-    
-    .image-wrapper img {
-        max-width: 100%; /* Em telas pequenas a imagem ocupa toda a largura */
+    .imagem-circulo {
+        width: 300px;
+        height: 300px;
+    }
+    .navbar {
+        width: 95%;
+    }
+    .bloco-conteudo {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
