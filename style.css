@@ -1,12 +1,16 @@
 :root {
-    --cor-principal: #8ca11a;
-    --cor-secundaria:#8ca11a;
+    --cor-principal: #262838;
+    --cor-secundaria: #8ca11;
     --cor-destaque: #303f09;
 }
 body {
     font-family: 'Chakra Petch', sans-serif;
     color: var(--cor-principal);
     margin: 2rem;
+}
+h1, h2, h3 {
+    color: var(--cor-secundaria);
+    font-weight: 700;
 }
 * {
     margin: 0;
