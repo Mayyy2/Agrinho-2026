@@ -1,12 +1,17 @@
+:root {
+    --cor-principal: #80b475;
+    --cor-secundaria:#8ca11a;
+    --cor-destaque: #c92BFC;
+}
 /* Remove margens padrão do navegador */
 * {
-    margin: 0;
+    margin: 10;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #ffffffef;
     display: flex;
     flex-direction: column;
     align-items: center;
