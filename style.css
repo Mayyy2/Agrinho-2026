@@ -1,9 +1,13 @@
 :root {
-    --cor-principal: #80b475;
+    --cor-principal: #8ca11a;
     --cor-secundaria:#8ca11a;
-    --cor-destaque: #c92BFC;
+    --cor-destaque: #303f09;
 }
-/* Remove margens padrão do navegador */
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    color: var(--cor-principal);
+    margin: 2rem;
+}
 * {
     margin: 10;
     padding: 0;
@@ -25,18 +29,5 @@ body {
     flex-direction: column;
 }
 
-/* Configuração de cada página (uma embaixo da outra) */
-.pagina-slide {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-}
 
-/* Faz a imagem do Canva se ajustar perfeitamente à tela do usuário */
-.imagem-canvas {
-    width: 100%;
-    height: auto;
-    display: block; /* Remove espaços fantasmas abaixo da imagem */
-}
+
